@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using HR.LeaveManagement.Domain.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HR.LeaveManagement.Domain;
 
-public class LeaveRequest
+public class LeaveRequest : BaseEntity
 {
-    public int Id { get; set; }
 
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
@@ -18,6 +18,6 @@ public class LeaveRequest
     public bool? Approved { get; set; }
     public bool Cancelled { get; set; }
 
-    public string RequestingEmployeeId { get; set; }
+    public string RequestingEmployeeId { get; set; } = string.Empty;
 
 }
